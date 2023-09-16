@@ -11,6 +11,5 @@ int main(){
 		case 5 : printf("vendredi");break;
 		case 6 : printf("samudi");break;
 		case 7 : printf("dimanch");break;
-	}
-		
+	}	
 }

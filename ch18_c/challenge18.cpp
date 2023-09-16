@@ -1,26 +1,29 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 #include <string.h>
 int main(){
-	int jour,mois,annee;
-	printf("donne une date : ");
-	scanf("%d/%d/%d",&jour,&mois,&annee);
-	switch(mois){
-		case 1 : printf("la date est : %d/Janvier/%d ",jour,annee);break;
-		case 2 : printf("la date est : %d/fevrier/%d ",jour,annee);break;
-		case 3 : printf("la date est : %d/mars/%d ",jour,annee);break;
-		case 4 : printf("la date est : %d/avril/%d ",jour,annee);break;
-		case 5 : printf("la date est : %d/mai/%d ",jour,annee);break;
-		case 6 : printf("la date est : %d/juin/%d ",jour,annee);break;
-		case 7 : printf("la date est : %d/juillet/%d ",jour,annee);break;
-		case 8 : printf("la date est : %d/août/%d ",jour,annee);break;
-		case 9 : printf("la date est : %d/septembre/%d ",jour,annee);break;
-		case 10 : printf("la date est : %d/octobre/%d ",jour,annee);break;
-		case 11 : printf("la date est : %d/novembre /%d ",jour,annee);break;
-		case 12 : printf("la date est : %d/décembre /%d ",jour,annee);break;
-		default   : printf("la date incorect ");break;	
-	}
+	char Date2[10];
+	const char sl[2]="/";
+	char *token;
+	int i;
+	char *dete[]={"Janvier","fevrier","mars","avril","mai","juin","juillet",
+					"août","septembre","octobre","novembre","décembre"};
+	printf("donne une date d'une format dd/mm/aaaa : ");
+	scanf("%s",&Date2);
+	printf("la date est : ");
+	token = strtok(Date2,sl);
+	int jeur = atoi(token);
+	if(jeur>0 && jeur<31)
+	printf("%s/",token);
+	else printf("INCOREECT JOUR/");
+	token=strtok(NULL, sl);
+	int mois = atoi(token);
+	if(mois>0 && mois <13)
+		for(int i=0;i<12;i++){
+			if(mois==i+1) printf("%s",dete[i]); 
+		}
+	else printf("INCOREECT MOIS");
+	token = strtok(NULL, sl);	
+	printf("/%s",token);
 	
-	
-		
 }
