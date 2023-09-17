@@ -26,9 +26,9 @@ int pwiss(int a){
 }
 
 int main(){
-	int a,b,chois,result;
+	int a,b,chois,result,;
 	
-	do{
+	do {
 		printf("Choise un operation \n");
 		printf("1) addition + \n2) substraction - \n3) multiplication *\n");
 		printf("4) division / \n5) Racin carre \n6) pwissans \n7) Quitte\n");
