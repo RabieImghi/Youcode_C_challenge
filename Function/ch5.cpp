@@ -7,11 +7,6 @@ int max_4(int a,int b,int c,int d){
 	if(max<d) max =d;
 	return max;
 }
-int max_2(int a,int b){
-	int max=a;
-	if(max<b) max =b;
-	return max;
-}
 int main(){
 	int x,y,z,w;
 	printf("Donne x : ");
@@ -22,7 +17,6 @@ int main(){
 	scanf("%d",&z);
 	printf("Donne y : ");
 	scanf("%d",&w);
-	printf("max 4 nombre %d\n",max_4(x,y,z,w));
-	printf("max 2 premier nombre %d",max_2(x,y));
+	printf("max %d",max_4(x,y,z,w));
 	
 }
