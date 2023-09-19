@@ -10,18 +10,23 @@ int main(){
 		if((L>50 || L<=0))	printf("L > 50 !! ");
 	}while((C>50 || C<=0) || (L>50 || L<=0));
 	
-	int T[L][C];
+	char T[L][C];
+	char D[L*C];
+	int k=0;
 	for(i=0;i<L;i++)
 		for(int j=0;j<C;j++){
 			printf("la case T[%d][%d] = ",i+1,j+1);
-			scanf("%d",&T[i][j]);	
+			scanf("%s",&T[i][j]);
 		}
 	for(i=0;i<L;i++){
 		for(int j=0;j<C;j++){
-			printf("T[%d][%d] = %d\t",i+1,j+1,T[i][j]);
-			sm+=T[i][j];
+			printf("T[%d][%d] = %c\t",i+1,j+1,T[i][j]);
+			D[k]=T[i][j];
+			k++;
 		}
 		printf("\n");
+	}	
+	for(i=0;i<L*C;i++){
+		printf("%c ",D[i]);
 	}
-	printf("la somme est %d",sm);	
 }
